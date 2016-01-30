@@ -1,0 +1,22 @@
+package platformer.blocks;
+
+import platformer.entity.EntityBomb;
+import platformer.resources.ImageLoader;
+import platformer.start.Start;
+
+public class BlockShooter extends Block{
+int timer = 0;
+	public BlockShooter(){
+		this.setName("shooter");
+		this.setId('!');
+		this.setTexture(ImageLoader.loadImage(getClass(), "/textures/blocks/shooter.png"));
+	}
+	public void onUpdate(int x,int y){
+		if(timer > 60){
+			Start.instance.world.addEntity(new EntityBomb(Start.instance.p.posX, Start.instance.p.posY), x*32, y*32);
+timer = 0;
+		}
+	timer++;
+		
+	}
+}
