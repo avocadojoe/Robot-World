@@ -211,8 +211,7 @@ try{
 
 	public int level= 1;
 	int t = 0;
-	public Server server;
-	
+
 	public int guiState = 1;
 public int frame = 0;
 	public void run(){
